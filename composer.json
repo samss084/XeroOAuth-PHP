@@ -3,18 +3,18 @@
     "description": "PHP class the Xero APIs",
     "type": "library",
     "keywords": ["xero","accounting","api","oauth"],
-    "homepage": "https://github.com/XeroAPI/XeroOAuth-PHP",
+    "homepage": "https://identity.xero.com/.well-known/openid-configuration"
     "license": "MIT",
      "support": {
         "forum": "https://community.xero.com/developer/",
         "issues": "https://github.com/XeroAPI/XeroOAuth-PHP/issues"
     },
     "autoload": {
-        "classmap": ["lib/"]
+        "classmap": 
     },
-    "require": {
-        "ext-openssl": "*",
-        "ext-curl": "*",
+     
+        "ext-openssl":,
+        "ext-curl": ,
         "php": ">=5.0.0"
     }
    

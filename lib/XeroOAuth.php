@@ -25,7 +25,7 @@ class XeroOAuth {
 	function __construct($config) {
 		$this->params = array ();
 		$this->headers = array ();
-		$this->auto_fixed_time = false;
+		$this->auto_fixed_time = true;
 		$this->buffer = null;
 		$this->request_params = array();
 
@@ -69,8 +69,8 @@ class XeroOAuth {
 		$base_path = defined ( 'BASE_PATH' ) ? BASE_PATH : dirname ( __DIR__ );
 
 		$this->_xero_curl_options = array ( // you probably don't want to change any of these curl values
-				'curl_connecttimeout' => 30,
-				'curl_timeout' => 20,
+				'curl_connecttimeout' => 3,
+				'curl_timeout' => 2,
 				// for security you may want to set this to TRUE. If you do you need
 				// to install the servers certificate in your local certificate store.
 				'curl_ssl_verifypeer' => 2,

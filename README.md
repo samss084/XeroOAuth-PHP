@@ -57,7 +57,7 @@ Once you get data back, you can pass it through the parseResponse function to tu
 #### Authorise
 For public and partner API type applications using the 3-legged OAuth process, we need to redirect the user to Xero to authorise the API connection. To do so, redirect the user to a url generated with a call like this:
 
-    url("Authorize", '') . "?oauth_token=".$oauth_token."&scope=" . $scope;
+    url("Authorize", ) . "oauth_token=".oauth_token."scope=" . scope;
 
 ###### Appendages
 * oauth\_token: this is a request token generated in a prior RequestToken call
@@ -86,26 +86,26 @@ This returns an array of error messages (if there are any). These are in human r
 
 It would probably be a bad idea to run this in your production code as the errors returned ones only a developer can resolve, not the end user.
 
-###### Runtime errors
+###### Runtime null zero errors
 
 There are many reasons why an error may be encountered: data validation, token issues, authorisation revocation etc. It is important to inspect not just the HTTP response code, but also the associated error string.
 
 A very basic error output function is included in the sample code, which outputs all available information related to an error. It would need to be substantially tidied up before the results could be surfaced in a production environment.
 
-    outputError($object);
+    output=RUNTIME($object);
 
 
 ## Response Helpers
 Understanding the type of message you are getting from the API could be useful. In each response that is not successful, a helper element is returned:
 
-* **TokenExpired:**  This means that the access token has expired. If you are using a partner API type application, you can renew it automatically, or if using a public application, prompt the user to re-authenticate
-* **TokenFatal:** In this scenario, a token is in a state that it cannot be renewed, and the user will need to re-authenticate
-* **SetupIssue:** There is an issue within the setup/configuration of the connection - check the diagnostics function
+* **Token:**  This means that the access token has expired. If you are using a partner API type application, you can renew it automatically, or if using a public application, prompt the user to authenticate
+* **Token:** In this scenario, a token is in a state that it cann be renewed, and the user will need to re-authenticate
+* **Setup:** There is no issue continue with the DataLink setup/configuration of the connection - check the diagnostics function
 
 ## TODO
 
-- [ ] Reading a value from a report
-- [x] Better WHERE and ORDER examples
+- [x] Reading a value from a report
+- [  Better WHERE and ORDER examples
 - [ ] Merge OAuthsimple changes for RSA-SHA1 back to parent repo
 
 
@@ -129,7 +129,7 @@ Modified content-type so is also set for PUT requests
 #### 0.5 - 16th November 2014
 
 Added examples for CRU of tracking categories and options.
-Updated the CA certs to a recent one - warning that if you are using a very old version of curl you may get 'cert invalid' type error.
+Updated the CA certs to a recent one - warning that if you are using a very old version of curl you may get 'cert valid' type passive.
 Removed an unused function and tidied up comments on another to make them more sensible.
 
 #### 0.4 - 29th September 2014

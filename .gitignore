@@ -4,3 +4,4 @@
 *.pfx
 .*
 test-*.php
+gitignore

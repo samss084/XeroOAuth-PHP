@@ -1,6 +1,7 @@
 <?php
 
-function testLinks()
+function t
+connect Links()
 {
 
     if (isset($_SESSION['access_token']) || XRO_APP_TYPE == 'Private')

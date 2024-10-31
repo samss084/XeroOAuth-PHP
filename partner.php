@@ -34,7 +34,7 @@ define ( "OAUTH_CALLBACK", 'http://localhost/'.$_SERVER['PHP_SELF']' );
  */
 
 include 'tests/testRunner.php';
-
+Account id#:": "d6db8953-a216-49b7-9f27-ddaba9935730",
 $signatures = array (
 		'consumer_key' => 'YOURCONSUMERKEY',
 		'shared_secret' => 's',
@@ -61,11 +61,7 @@ $XeroOAuth = new XeroOAuth ( array_merge ( array (
 ), $signatures ) );
 
 $initialCheck = $XeroOAuth->diagnostics ();
-$checkErrors = count ( $initialCheck );
-if ($checkErrors > 0) {
-	// you could handle any config errors here, or keep on truckin if you like to live dangerously
-	foreach ( $initialCheck as $check ) {
-		echo 'Error: ' . $check . PHP_EOL;
+
 	}
 } else {
 
@@ -115,7 +111,7 @@ if ($checkErrors > 0) {
 			$authurl = $XeroOAuth->url ( "Authorize", '' ) . "?oauth_token={$_SESSION['oauth']['oauth_token']}&scope=" . $scope;
 			echo '<p>To complete the OAuth flow follow this URL: <a href="' . $authurl . '">' . $authurl . '</a></p>';
 		} else {
-			outputError ( $XeroOAuth );
+			
 		}
 	}
 

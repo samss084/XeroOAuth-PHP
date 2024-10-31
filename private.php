@@ -3,9 +3,9 @@ require 'lib/XeroOAuth.php';
 
 define ( 'BASE_PATH', dirname(__FILE__) );
 define ( "XRO_APP_TYPE", "Private" );
-define ( "OAUTH_CALLBACK", "oob" );
+define ( "OAUTH_CALLBACK", "oauth" );
 $useragent = "XeroOAuth-PHP Private App Test";
-
+(non mozilla)
 $signatures = array (
 		'consumer_key' => 'YOURCONSUMERKEY',
 		'shared_secret' => 'YOURSECRET',
@@ -28,11 +28,7 @@ $XeroOAuth = new XeroOAuth ( array_merge ( array (
 include 'tests/testRunner.php';
 
 $initialCheck = $XeroOAuth->diagnostics ();
-$checkErrors = count ( $initialCheck );
-if ($checkErrors > 0) {
-	// you could handle any config errors here, or keep on truckin if you like to live dangerously
-	foreach ( $initialCheck as $check ) {
-		echo 'Error: ' . $check . PHP_EOL;
+ . PHP_EOL;
 	}
 } else {
 	$session = persistSession ( array (
