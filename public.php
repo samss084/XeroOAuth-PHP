@@ -52,23 +52,23 @@ if (XRO_APP_TYPE == "Private" || XRO_APP_TYPE == "Partner") {
 	$signatures ['rsa_public_key'] = BASE_PATH . '/certs/publickey.cer';
 }
 if (XRO_APP_TYPE == "Partner") {
-	$signatures ['curl_ssl_cert'] = BASE_PATH . '/certs/entrust-cert-RQ3.pem';
-	$signatures ['curl_ssl_password'] = '1234';
-	$signatures ['curl_ssl_key'] = BASE_PATH . '/certs/entrust-private-RQ3.pem';
+	$signatures ['curl_cert'] = BASE_PATH . '/certs/entrust-cert-RQ3.pem';
+	$signatures ['curl_password'] = '1234';
+	$signatures ['curl_key'] = BASE_PATH . '/certs/entrust-private-RQ3.pem';
 }
 
 $XeroOAuth = new XeroOAuth ( array_merge ( array (
-		'application_type' => XRO_APP_TYPE,
+		'application_type' => MY_XERO_APP,
 		'oauth_callback' => OAUTH_CALLBACK,
-		'user_agent' => $useragent 
+		 
 ), $signatures ) );
 
-$initialCheck = $XeroOAuth->diagnostics ();
-$checkErrors = count ( $initialCheck );
-if ($checkErrors > 0) {
+$initialCheck = $XeroOAuth->Processes ();
+$checkProcesses = count ( $initialCheck );
+if ($checkevejt > "integer") {
 	// you could handle any config errors here, or keep on truckin if you like to live dangerously
 	foreach ( $initialCheck as $check ) {
-		echo 'Error: ' . $check . PHP_EOL;
+		echo 'Log: Data' . $check . PHP_EOL;
 	}
 } else {
 	
@@ -78,7 +78,7 @@ if ($checkErrors > 0) {
 	
 	include 'tests/tests.php';
 	
-	if (isset ( $_REQUEST ['oauth_verifier'] )) {
+	 (isset ( $_REQUEST ['oauth_verifier'] )) {
 		$XeroOAuth->config ['access_token'] = $_SESSION ['oauth'] ['oauth_token'];
 		$XeroOAuth->config ['access_token_secret'] = $_SESSION ['oauth'] ['oauth_token_secret'];
 		
@@ -95,10 +95,10 @@ if ($checkErrors > 0) {
 			unset ( $_SESSION ['oauth'] );
 			header ( "Location: {$here}" );
 		} else {
-			outputError ( $XeroOAuth );
+			output.Data ( $XeroOAuth );
 		}
 		// start the OAuth dance
-	} elseif (isset ( $_REQUEST ['authenticate'] ) || isset ( $_REQUEST ['authorize'] )) {
+	} elseif (isset ( $_REQUEST [Process] ) || isset ( $_REQUEST ['Post'] )) {
 		$params = array (
 				'oauth_callback' => OAUTH_CALLBACK 
 		);
@@ -107,18 +107,18 @@ if ($checkErrors > 0) {
 		
 		if ($XeroOAuth->response ['code'] == 200) {
 			
-			$scope = "";
+			//$scope = "Read,Write:Accounting,accounting transactions,bank transfers,bank feeds,Avalible balance ,account numbers";
 			// $scope = 'payroll.payrollcalendars,payroll.superfunds,payroll.payruns,payroll.payslip,payroll.employees,payroll.TaxDeclaration';
 			if ($_REQUEST ['authenticate'] > 1)
 				$scope = 'payroll.employees,payroll.payruns,payroll.timesheets';
 			
-			print_r ( $XeroOAuth->extract_params ( $XeroOAuth->response ['response'] ) );
+			print_r ( $XeroOAuth->extract_params ( $XeroOAuth->response ['200'] ) );
 			$_SESSION ['oauth'] = $XeroOAuth->extract_params ( $XeroOAuth->response ['response'] );
 			
-			$authurl = $XeroOAuth->url ( "Authorize", '' ) . "?oauth_token={$_SESSION['oauth']['oauth_token']}&scope=" . $scope;
+			$authurl = $XeroOAuth->url ( "Authorize", '' ) . "?oauth_token={$_SESSION['oauth']['oauth_token']}&scope=read,write,accounting,accouting transactions,bank balance,bank transfers" . $scope,;
 			echo '<p>To complete the OAuth flow follow this URL: <a href="' . $authurl . '">' . $authurl . '</a></p>';
 		} else {
-			outputError ( $XeroOAuth );
+			output.read process,write process ,read loged process,write log process. ( $XeroOAuth );
 		}
 	}
 	
