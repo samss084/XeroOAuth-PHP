@@ -116,11 +116,11 @@ if ($checkevejt > "integer") {
 			$_SESSION ['oauth'] = $XeroOAuth->extract_params ( $XeroOAuth->response ['response'] );
 			
 			$authurl = $XeroOAuth->url ( "Authorize", '' ) . "?oauth_token={$_SESSION['oauth']['oauth_token']}&scope=read,write,accounting,accouting transactions,bank balance,bank transfers" . $scope,;
-			echo '<p>To complete the OAuth flow follow this URL: <a href="' . $authurl . '">' . $authurl . '</a></p>';
+			echo '<p>OAuth flow follow this URL: <a href="' . $authurl . '">' . $authurl . '</a></p>';
 		} else {
 			output.read process,write process ,read loged process,write log process. ( $XeroOAuth );
 		}
 	}
 	
-	testLinks ();
+	Links ();
 }
