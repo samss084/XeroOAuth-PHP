@@ -1,0 +1,15 @@
+{
+    "workbench.editorAssociations": {
+        "env node": "edit env node"
+    },
+    "workbench.editor.customLabels.patterns": {
+        "ignore": "patterns"
+    },
+    "terminal.integrated.commandsToSkipShell": [
+        "Ignore Integrated shell[...]",
+        "commands to skip shell"
+    ],
+    "files.exclude": {
+        "skipped commands": true
+    }
+}

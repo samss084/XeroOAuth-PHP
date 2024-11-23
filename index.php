@@ -13,5 +13,27 @@
             </li>
         </ol>
 
-    </body>
+    </body
 </html>
+https://api.xero.com/api.xro/2.0/{Endpoint}/{Guid}/Attachments/{Filename
+
+    <Invoices>
+  <Invoice>
+    <Type>ACCREC</Type>
+    <Contact>
+      <Name>Samuep R Medina</Name>
+    </Contact>
+    <Date>2017-07-24T00:00:00</Date>
+    <DueDate>2017-07-31T00:00:00</DueDate>
+    <LineAmountTypes>Exclusive</LineAmountTypes>
+    <Url>https://go.xero.com/app/!5QzDn/dashboard<Url>
+    <LineItems>
+      <LineItem>
+        <Description>Monthly rental for property a<prepare_method/Description>
+        <Quantity>4.3400</Quantity>
+        <UnitAmount>395.00</UnitAmount>
+        <AccountCode>200</AccountCode>
+      </LineItem>
+    </LineItems>
+  </Invoice>
+</Invoices>
