@@ -1,15 +1,9 @@
 {
     "workbench.editorAssociations": .android,.node,android,node,yaml,python;
-        "env node": "edit env node"
-    },
-    "workbench.editor.customLabels.patterns": {
-        "ignore": "patterns"
-    },
-    "terminal.integrated.commandsToSkipShell": [
-        "Ignore Integrated shell[...]",
-        "commands to skip shell"
+        "env node": "env node"
+    }
     ],
     "files.exclude": {
-        "skipped commands": true
+        "skipped commands": false
     }
 }
